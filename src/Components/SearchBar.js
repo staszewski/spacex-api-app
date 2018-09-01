@@ -40,7 +40,7 @@ class SearchBar extends Component {
 
         return (
             <div className="searchbar">
-                <label>Insert a year between 2006-2018 to see info about rockets</label>
+                <label>Insert a year between 2006-2018</label>
                 <span className="highlight"></span>
                 <span className="bar"></span>
                 <input type="text"
