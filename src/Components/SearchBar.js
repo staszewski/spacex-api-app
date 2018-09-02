@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Result from './Result';
-
+import { StyleSheet, css } from 'aphrodite';
 
 
 class SearchBar extends Component {
@@ -39,20 +39,42 @@ class SearchBar extends Component {
 
 
         return (
-            <div className="searchbar">
-                <label>Insert a year between 2006-2018</label>
-                <span className="highlight"></span>
-                <span className="bar"></span>
-                <input type="text"
-                    value={this.state.inputValue}
-                    onChange={this.handleInputChange}
-                    ref={input => this.search = input}
-                    placeholder="type a year" />    
+            <div className={css(styles.searchbar)}>
+                <label className={css(styles.label)}>
+                    Insert a year between 2006-2018
+                </label>
+                <input className={css(styles.input)} 
+                       type="text"
+                       value={this.state.inputValue}
+                       onChange={this.handleInputChange}
+                       ref={input => this.search = input}
+                       placeholder="type a year" />    
                 <Result dataFromSearchBar={this.state.data} 
                         inputValue={this.state.inputValue}/>
             </div>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    searchbar: {
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column'
+    },
+    input: {
+        fontSize: 18,
+        padding: 5,
+        display: 'block',
+        width: 320,
+        border: 'none',
+        borderBottom: `1px solid #757575`,
+        borderRadius: 5
+    },
+    label: {
+        color: '#fff',
+        textAlign: 'center'
+    }
+  });
 
 export default SearchBar
