@@ -35,7 +35,7 @@ class SearchBar extends Component {
 
     render() {
 
-
+        console.log(this.props.apiData)
 
 
         return (
