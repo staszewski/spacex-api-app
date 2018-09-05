@@ -25,7 +25,7 @@ class App extends Component {
 const styles = StyleSheet.create({
   app: {
     height: `100%`,
-    background: `#000 url(https://upload.wikimedia.org/wikipedia/commons/a/a8/Falcon_9_first_stage_attempts_landing_on_ASDS_after_CRS-6_%2817170624412%29.jpg) no-repeat center`,
+    background: `gray`,
     backgroundSize: 'cover',
     display: 'flex',
     justifyContent: 'center',
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
   return {
-    apiData: state.apiData 
+    apiData: state.apiData
   }
 };
 const mapDispatchToProps = { apiFetched }; 

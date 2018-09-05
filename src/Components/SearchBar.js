@@ -8,35 +8,19 @@ class SearchBar extends Component {
         super(props)
 
         this.state = {
-            inputValue: '',
-            data: []
+            inputValue: ''
         }
     }
 
     handleInputChange = () => {
         this.setState({
             inputValue: this.search.value
-        }, () => {
-            if (this.state.inputValue.length > 3) {
-                // tutaj lepsza walidacja by się przydała niż tylko length > 3
-                this.apiCall();
-            } 
         })
-    }
-
-
-    apiCall = () => {
-        fetch('https://api.spacexdata.com/v2/launches/')
-            .then(resp => resp.json())
-            .then(data => this.setState({
-                data: data
-            }))
     }
 
     render() {
 
         console.log(this.props.apiData)
-
 
         return (
             <div className={css(styles.searchbar)}>
@@ -48,9 +32,8 @@ class SearchBar extends Component {
                        value={this.state.inputValue}
                        onChange={this.handleInputChange}
                        ref={input => this.search = input}
-                       placeholder="type a year" />    
-                <Result dataFromSearchBar={this.state.data} 
-                        inputValue={this.state.inputValue}/>
+                       placeholder="type a year" />
+                <button onClick={this.filterData}>Click</button>   
             </div>
         )
     }
