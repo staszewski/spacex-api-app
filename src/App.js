@@ -1,22 +1,14 @@
 import React, { Component } from 'react';
-import SearchBar from './Components/SearchBar'
-import Result from './Components/Result'
 import { StyleSheet, css } from 'aphrodite';
-import { connect } from "react-redux";
-import { apiFetched } from "./actions";
+import store from './store/store';
+import RepoSearch from './Components/RepoSearch'
 
 
 class App extends Component {
-  componentDidMount() {
-    fetch("https://api.spacexdata.com/v2/launches/")
-      .then(res => res.json())
-      .then(json => this.props.apiFetched(json)); // (1)
-  }
   render() {
     return (
       <div className={css(styles.app)}>
-        <SearchBar apiData={this.props.apiData}/>
-        <Result />
+        <RepoSearch store={store}/>
       </div>
     );
   }
@@ -25,7 +17,7 @@ class App extends Component {
 const styles = StyleSheet.create({
   app: {
     height: `100%`,
-    background: `gray`,
+    background: `#000 url(https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`,
     backgroundSize: 'cover',
     display: 'flex',
     justifyContent: 'center',
@@ -34,11 +26,5 @@ const styles = StyleSheet.create({
 });
 
 
-const mapStateToProps = (state) => {
-  return {
-    apiData: state.apiData
-  }
-};
-const mapDispatchToProps = { apiFetched }; 
 
-export const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App); // (3)export default App;
+export default App; 
