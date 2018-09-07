@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import SearchBar from './Components/SearchBar'
 import { StyleSheet, css } from 'aphrodite';
+import store from './store/store';
+import RepoSearch from './Components/RepoSearch'
+
 
 class App extends Component {
   render() {
     return (
       <div className={css(styles.app)}>
-        <SearchBar />
+        <RepoSearch store={store}/>
       </div>
     );
   }
@@ -15,7 +17,7 @@ class App extends Component {
 const styles = StyleSheet.create({
   app: {
     height: `100%`,
-    background: `#000 url(https://upload.wikimedia.org/wikipedia/commons/a/a8/Falcon_9_first_stage_attempts_landing_on_ASDS_after_CRS-6_%2817170624412%29.jpg) no-repeat center`,
+    background: `#000 url(https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`,
     backgroundSize: 'cover',
     display: 'flex',
     justifyContent: 'center',
@@ -23,4 +25,6 @@ const styles = StyleSheet.create({
   }
 });
 
-export default App;
+
+
+export default App; 
