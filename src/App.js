@@ -17,7 +17,7 @@ class App extends Component {
 const styles = StyleSheet.create({
   app: {
     height: `100%`,
-    background: `#000 url(https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`,
+    background: `#fff url(https://svgshare.com/i/8Gt.svg)`,
     backgroundSize: 'cover',
     display: 'flex',
     justifyContent: 'center',

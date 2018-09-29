@@ -33,12 +33,15 @@ const RepoSearch = (props) => {
           contentLabel="Example Modal"
           onRequestClose={props.closeModal}
           shouldCloseOnOverlayClick={true}
+          style={customStyles}
         >
           <div>
           {props.showModal ? 
           <div>
             <h2>{modalData[props.indexModal].mission_name}</h2>
-            <img src={modalData[props.indexModal].links.mission_patch} alt=""/>
+            <img src={modalData[props.indexModal].links.mission_patch}
+                 alt=""
+                 className={css(styles.image)}/>
           </div>
             :
             <h2>showmodal is false</h2>
@@ -92,8 +95,25 @@ const styles = StyleSheet.create({
     },
     input: {
         width: `100%`
+    },
+    image: {
+        height: '50%',
+        width: '50%'
     }
   });
+
+  const customStyles = {
+    content : {
+      top                   : '50%',
+      left                  : '50%',
+      right                 : 'auto',
+      bottom                : 'auto',
+      marginRight           : '-50%',
+      paddingTop            : '-20%',
+      transform             : 'translate(-50%, -50%)'
+    }
+  };
+  
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(RepoSearch)
