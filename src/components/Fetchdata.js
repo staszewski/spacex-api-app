@@ -1,24 +1,29 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { FETCH_DATA } from "../constants/ActionTypes";
-import { link } from "fs";
+import { FETCH_DATA, UPDATE_INPUT } from "../constants/ActionTypes";
 
 class Fetchdata extends Component {
-
-  componentDidMount = () => {
-    this.props.handleSubmit()
-  }
   
+  componentDidMount = () => {
+    // tutaj jakis wewnetrzny state, zeby nie odpalac za kazdym mountowaniem?
+      this.props.handleSubmit();
+  }
 
   render() {
-    const data = this.props.users || {}
+    const data = this.props.flights || {}
+    console.log(data)
     return (
       <div>
-        {data.map((el => {
-          return (
-            <li>{el.name}</li>
-          )
-        }))}
+        <input type="text"
+               onChange={this.props.handleInputChange}
+               value={this.props.value}/>   
+        {data.filter(el => {
+              return el.launch_year === this.props.value
+          }).map((el, index) => {
+              return <li>
+                        {el.mission_name}
+                    </li>
+          })}   
       </div>
     );
   }
@@ -27,17 +32,20 @@ class Fetchdata extends Component {
 
 export const mapStateToProps = store => {
   return {
-    users: store.fetchdata.users
+    flights: store.fetchdata.flights,
+    value: store.fetchdata.value
   };
 }; 
 
 export const mapDispatchToProps = dispatch => {
   return {
     handleSubmit: () => {
-      fetch("https://jsonplaceholder.typicode.com/users")
+      fetch("https://api.spacexdata.com/v2/launches")
       .then(resp => resp.json())
-      .then(data => dispatch({type: FETCH_DATA, users: data })) 
-
+      .then(data => dispatch({type: FETCH_DATA, payload: data })) 
+    },
+    handleInputChange: e => {
+      dispatch({type: UPDATE_INPUT, payload: e.target.value})
     }
   };
 };

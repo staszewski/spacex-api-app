@@ -5,9 +5,8 @@
 
 /* eslint-disable */
 
-export const INCREMENT_NUM = "INCREMENT_NUM";
-export const DECREMENT_NUM = "DECREMENT_NUM";
-export const RESET = "RESET";
+
 export const FETCH_DATA = "FETCH_DATA";
+export const UPDATE_INPUT = "UPDATE_INPUT";
 
 /* eslint-enable */
