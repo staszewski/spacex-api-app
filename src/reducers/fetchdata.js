@@ -7,7 +7,9 @@ import {
 
 const initialState = {
   flights: [],
-  value: ""
+  value: "",
+  showModal: false,
+  indexModal: 0
 }
 
 
@@ -25,7 +27,7 @@ export default (state = initialState, action) => {
     case SHOW_MODAL:
       return Object.assign({}, state, {
         showModal: true,
-        indexModal: action.index
+        indexModal: action.payload
       })
     case CLOSE_MODAL:
       return Object.assign({}, state, {
