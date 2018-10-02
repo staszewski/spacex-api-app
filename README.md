@@ -22,4 +22,4 @@ Working now on Redux.
 
 To do:
 - [ ] Add axios
-- [ ] Add redux
+- [ x ] Add redux
