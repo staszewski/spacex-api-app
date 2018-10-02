@@ -14,7 +14,6 @@ const initialState = {
 
 
 export default (state = initialState, action) => {
-  console.log("reducer hit")
   switch (action.type) {
     case FETCH_DATA:
       return Object.assign({}, state, {
