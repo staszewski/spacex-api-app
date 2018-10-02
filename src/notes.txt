@@ -1,6 +1,0 @@
-1. najpierw spróbować fetch, potem zobaczyć axios do req
-2. po wpisaniu danego roku, wyrzucic wszystkie loty spacex
-3. użyć sposobu rwd jak sie uczyliśmy przy sassie
-4. zrobić issue przy sassie że nie compiluje za każdym razem poprawnie [x]
-5. modal po kliknięciu w dany lot (na pewno trzeba będzie przekazać index)
-        5.1 dodac state do searcha, po kliknieciu zmienia sie na true, pokazuje sie modal props.cos ? modal : null
