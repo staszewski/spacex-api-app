@@ -8,5 +8,6 @@
 
 export const FETCH_DATA = "FETCH_DATA";
 export const UPDATE_INPUT = "UPDATE_INPUT";
-
+export const SHOW_MODAL = "SHOW_MODAL";
+export const CLOSE_MODAL = "CLOSE_MODAL";
 /* eslint-enable */

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FETCH_DATA, UPDATE_INPUT } from "../constants/ActionTypes";
+import Modal from 'react-modal';
 
 class Fetchdata extends Component {
   
@@ -10,20 +11,25 @@ class Fetchdata extends Component {
   }
 
   render() {
-    const data = this.props.flights || {}
-    console.log(data)
+    const dataToMap = this.props.flights || {}
+    const modalData = this.props.flights.filter(el => {
+      return el.launch_year === this.props.value
+  })
+  console.log(modalData)
     return (
       <div>
         <input type="text"
                onChange={this.props.handleInputChange}
-               value={this.props.value}/>   
-        {data.filter(el => {
+               value={this.props.value}/>
+        <div>   
+        {dataToMap.filter(el => {
               return el.launch_year === this.props.value
-          }).map((el, index) => {
-              return <li>
+          }).map(el => {
+              return <div>
                         {el.mission_name}
-                    </li>
-          })}   
+                    </div>
+          })}
+          </div>   
       </div>
     );
   }
