@@ -17,15 +17,19 @@ class Fetchdata extends Component {
   })
   console.log(modalData)
     return (
-      <div>
+      <div className="fetchdata">
         <input type="text"
                onChange={this.props.handleInputChange}
-               value={this.props.value}/>
+               value={this.props.value}
+               className="effect-1"
+               />
+               <span className="focus-border"></span>
         <div>   
         {dataToMap.filter(el => {
               return el.launch_year === this.props.value
           }).map((el, index) => {
-              return <div onClick={()=> this.props.displayModal(index)}>
+              return <div onClick={()=> this.props.displayModal(index)}
+                          className="fetchdata__item">
                         {el.mission_name}
                     </div>
           })}
@@ -35,7 +39,7 @@ class Fetchdata extends Component {
           contentLabel="Example Modal"
           onRequestClose={this.props.closeModal}
           shouldCloseOnOverlayClick={true}
-          style={customStyles}
+          
         >
           <div>
           {this.props.showModal ? 
@@ -88,13 +92,10 @@ export const mapDispatchToProps = dispatch => {
 
 const customStyles = {
   content : {
-    top                   : "50%",
-    left                  : "50%",
-    right                 : "auto",
-    bottom                : "auto",
-    marginRight           : "-50%",
-    paddingTop            : "-20%",
-    transform             : "translate(-50%, -50%)"
+    top: "20%",
+    left: "20%",
+    right: "20%",
+    bottom: "20%"
   }
 };
 
