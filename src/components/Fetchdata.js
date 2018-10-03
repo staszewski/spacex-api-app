@@ -39,15 +39,20 @@ class Fetchdata extends Component {
           contentLabel="Example Modal"
           onRequestClose={this.props.closeModal}
           shouldCloseOnOverlayClick={true}
-          
         >
-          <div>
+        <div className="modal">
           {this.props.showModal ? 
-          <div>
-            <h2>{modalData[this.props.indexModal].mission_name}</h2>
+        <div className="modal__container">
             <img src={modalData[this.props.indexModal].links.mission_patch}
                  alt="" />
+          <div className="modal__textcontainer">
+            <p>Mission name: {modalData[this.props.indexModal].mission_name}</p>
+            <br />
+            <p>Rocket name: {modalData[this.props.indexModal].rocket.rocket_name}</p>
+            <br />
+            <p>Details: {modalData[this.props.indexModal].details}</p>
           </div>
+        </div>
             :
             <h2>showmodal is false</h2>
           } 

@@ -23,6 +23,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
 
         input {
             background: none;
@@ -48,6 +49,39 @@ body {
 
 }
 
+.modal {
+    height: 100%;
+    width: 100%
+}
+
+.modal__container {
+    display: flex;
+    color: #000;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    img {
+        height: 100%;
+        width: 30%;
+        margin: 1em;
+    }
+
+    .modal__imagecontainer {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+    }
+
+    .modal__textcontainer {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 .ReactModal__Content {
     opacity: 0;
   }
@@ -55,8 +89,35 @@ body {
   .ReactModal__Content--after-open {
     opacity: 1;
     transition: opacity 1000ms;
+    top: 20% !important;
+    left: 20% !important;
+    right: 20% !important;
+    bottom: 20% !important;
   }
   
   .ReactModal__Content--before-close {
     opacity: 0;
   }
+
+  @media #{$tablet}{
+    .modal__container {
+        flex-direction: column;
+        overflow: initial;
+        img {
+            width: 100%;
+        }
+    }
+    .ReactModal__Overlay {
+        top: 3% !important;
+        left: 3% !important;
+        right: 3% !important;
+        bottom: 3% !important;
+    }
+
+    .ReactModal__Content--after-open {
+        top: 3% !important;
+        left: 3% !important;
+        right: 3% !important;
+        bottom: 3% !important; 
+    }
+}
