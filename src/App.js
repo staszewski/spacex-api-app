@@ -4,7 +4,7 @@ import Fetchdata from './components/Fetchdata';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="wrapper">
         <Fetchdata />
       </div>
     );
