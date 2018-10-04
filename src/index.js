@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 
 import App from "./App";
 import store from "./store";
+import './styles/main.scss'
 
 // By using <Provider />, the store will be made available for all the components in your application.
 
