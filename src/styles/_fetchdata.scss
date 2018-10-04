@@ -99,6 +99,13 @@ body {
     opacity: 0;
   }
 
+  .data__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+}
+
   @media #{$tablet}{
     .modal__container {
         flex-direction: column;
@@ -120,4 +127,9 @@ body {
         right: 3% !important;
         bottom: 3% !important; 
     }
+
+    .data__container {
+        width: 100%;
+    }
 }
+
