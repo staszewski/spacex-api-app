@@ -24,7 +24,7 @@ class Fetchdata extends Component {
                className="effect-1"
                />
                <span className="focus-border"></span>
-        <div>   
+        <div className="data__container">   
         {dataToMap.filter(el => {
               return el.launch_year === this.props.value
           }).map((el, index) => {
@@ -95,13 +95,5 @@ export const mapDispatchToProps = dispatch => {
   };
 };
 
-const customStyles = {
-  content : {
-    top: "20%",
-    left: "20%",
-    right: "20%",
-    bottom: "20%"
-  }
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Fetchdata);

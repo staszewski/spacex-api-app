@@ -63,7 +63,7 @@ My app is completely open source so you are free to make PR's. Everyone is welco
     Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm).
 
 2. **Install [Git](https://git-scm.com/downloads)**.
-3.  **Go back to #2 of [Initial Machine Setup](#installation).**
+3.  **Go back to #2 of [Installation](#installation).**
 License
 ----
 
