@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { FETCH_DATA, UPDATE_INPUT, SHOW_MODAL, CLOSE_MODAL } from "../constants/ActionTypes";
 import Modal from 'react-modal';
 
 class Fetchdata extends Component {
   
   componentDidMount = () => {
-    // tutaj jakis wewnetrzny state, zeby nie odpalac za kazdym mountowaniem?
       this.props.handleSubmit();
   }
 
@@ -64,36 +61,5 @@ class Fetchdata extends Component {
 }
 
 
-export const mapStateToProps = store => {
-  return {
-    flights: store.fetchdata.flights,
-    value: store.fetchdata.value,
-    showModal: store.fetchdata.showModal,
-    closeModal: store.fetchdata.showModal,
-    indexModal: store.fetchdata.indexModal
-  };
-}; 
 
-export const mapDispatchToProps = dispatch => {
-  return {
-    handleSubmit: () => {
-      fetch("https://api.spacexdata.com/v2/launches")
-      .then(resp => resp.json())
-      .then(data => dispatch({type: FETCH_DATA, payload: data })) 
-    },
-    handleInputChange: e => {
-      dispatch({type: UPDATE_INPUT, payload: e.target.value})
-    },
-    displayModal: (index) => {
-      const action = {type: SHOW_MODAL, payload: index}
-      dispatch(action)
-    },
-    closeModal: () => {
-      const action = {type: CLOSE_MODAL}
-      dispatch(action)
-    }
-  };
-};
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Fetchdata);
+export default Fetchdata;
