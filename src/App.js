@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import Fetchdata from './components/Fetchdata';
+import FetchDataContainer from "./containers/FetchDataContainer";
 
 class App extends Component {
   render() {
     return (
       <div className="wrapper">
-        <Fetchdata />
+        <FetchDataContainer />
       </div>
     );
   }
