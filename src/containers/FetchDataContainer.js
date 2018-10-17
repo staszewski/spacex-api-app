@@ -13,8 +13,8 @@ function FetchDataContainer(props) {
                 indexModal={props.indexModal}
                 handleSubmit={props.handleSubmit}
                 handleInputChange={props.handleInputChange}
-                showModal={props.showModal}
-                closeModal={props.closeModal}
+                displayModal={props.displayModal}
+                closeModalFunc={props.closeModalFunc}
                  />
   )
 }
@@ -43,7 +43,7 @@ export const mapStateToProps = store => {
         const action = {type: SHOW_MODAL, payload: index}
         dispatch(action)
       },
-      closeModal: () => {
+      closeModalFunc: () => {
         const action = {type: CLOSE_MODAL}
         dispatch(action)
       }

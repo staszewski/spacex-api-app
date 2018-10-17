@@ -34,7 +34,7 @@ class Fetchdata extends Component {
           <Modal
           isOpen={this.props.showModal}
           contentLabel="Example Modal"
-          onRequestClose={this.props.closeModal}
+          onRequestClose={this.props.closeModalFunc}
           shouldCloseOnOverlayClick={true}
         >
         <div className="modal">
